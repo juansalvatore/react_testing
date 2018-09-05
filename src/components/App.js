@@ -10,13 +10,16 @@ class App extends Component {
   }
 
   handleSubmit = e => {
-    if (this.state.comment) {
-      this.setState(prevState => ({
-        comments: [...prevState.comments, this.state.comment],
-      }))
-      this.setState({ comment: '' })
-    }
     e.preventDefault()
+
+    if (!this.state.comment) {
+      return
+    }
+
+    this.setState(prevState => ({
+      comments: [...prevState.comments, this.state.comment],
+    }))
+    this.setState({ comment: '' })
   }
 
   handleInput = e => {
@@ -29,7 +32,6 @@ class App extends Component {
         className="App"
         style={{
           width: '100%',
-          padding: 20,
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',

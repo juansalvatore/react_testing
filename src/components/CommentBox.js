@@ -4,6 +4,7 @@ export default class CommentBox extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
+        <h4 style={{ marginBottom: 5 }}>Add a comment</h4>
         <textarea
           style={{
             width: 314,
@@ -28,7 +29,7 @@ export default class CommentBox extends Component {
           }}
           disabled={!this.props.comment ? true : false}
         >
-          Submit
+          Submit comment
         </button>
       </form>
     )
