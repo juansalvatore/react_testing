@@ -18,11 +18,12 @@ it('has a text area and a button', () => {
 })
 
 it('has a text area that users can type in', () => {
-  console.log(
-    wrapped.find('textarea').simulate('change', {
-      target: {
-        value: 'new comment',
-      },
-    })
-  )
+  wrapped.find('textarea').simulate('change', {
+    target: {
+      value: 'new comment',
+    },
+  })
+  // Simulate re-render as if setState was being called
+  wrapped.update()
+  // Assert it recieved the correct value prop
 })
