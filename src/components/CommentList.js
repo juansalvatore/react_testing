@@ -5,6 +5,7 @@ export default class CommentList extends Component {
     if (this.props.comments) {
       return this.props.comments.map(comment => (
         <p
+          key={comment}
           style={{
             padding: 10,
             width: 314,
